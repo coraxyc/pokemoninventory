@@ -1,5 +1,7 @@
 #include "lab.h"
 pokemonList p;
+//creates a random integer, has a switch where different pokemon
+//are selected based on the random integer 
 pokemon pokemonGenerator(){
     pokemon newPokemon;
     int random;
