@@ -1,44 +1,45 @@
 #include "lab.h"
-
-void pokemonGenerator(){
+pokemonList p;
+pokemon pokemonGenerator(){
+    pokemon newPokemon;
     int random;
-    random = rand() % 7 + 1;
+    random = rand() % 9 + 1;
+    std::string gender;
     std::cout << random << std::endl;
     switch(random) {
 	case 1:
 	case 2:
-	    std::cout << "bulbasaur!" << std::endl;
+	    p = bulbasaur;
 	    break;
 	case 3:
-	    std::cout << "charmander" << std::endl;
-	    break;
-	case 4: 
-	    std::cout << "squirtle" << std::endl;
+	case 4:
+	    p = charmander;
 	    break;
 	case 5:
-	    std::cout << "exeggutor" << std::endl;
-	    break;
 	case 6: 
-	    std::cout << "pikachu!" << std::endl;
+	    p = squirtle;
 	    break;
 	case 7:
-	    std::cout << "wailmer!" << std::endl;
+	    p = exeggutor;
+	    break;
+	case 8: 
+	    p = pikachu;
+	    break;
+	case 9:
+	    p = wailmer;
 	    break;
 	    
     }
-    /*
-    if(random >=0 && random < 20) {
-	std::cout << "bulbasaur!" << std::endl;
-    } else if(random >=20 && random <40) {
-	std::cout << "charmander!" << std::endl;
-    } else if(random >=40 && random <60){
-	std::cout << "squirtle!" << std::endl;
-    } else if(random >=60 && random <75){
-	std::cout << "exeggutor!" << std::endl;
-    } else if(random >=75 && random <85){
-	std::cout << "pikachu!" << std::endl;
-    } else if(random >=85 && random <=100){
-	std::cout << "wailmer!" << std::endl;
+    
+    if(random%2 == 0) {
+	gender = "F";
+    } else {
+	gender = "M";
     }
-    */
+    newPokemon.name = pokemonName[p];
+    newPokemon.fileName = pokemonFileName[p];
+    newPokemon.type = pokemonType[p];
+    newPokemon.attempts = pokemonAttempts[p];
+    newPokemon.gender = gender;
+    return newPokemon;
 }
