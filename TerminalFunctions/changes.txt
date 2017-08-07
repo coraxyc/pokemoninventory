@@ -1,0 +1,106 @@
+add in lab.h:
+//1. add under Pokemon struct
+/***ADD THIS FUNCTION TO POKEMON STRUCT 8/4/2017 13:11 PM***/
+	void eraseElements() {
+    //erase contents of last element in Pokemon array
+    //by changing contents to empty string literals and 0's
+    //for strings and integers respectively
+	    name = "";
+	    gender = "";
+	    imageFileName = "";
+	    type = "";
+	    attempts = 0;
+	};
+//2. add to list of function declarations
+std::string getPokemonName(Pokemon*,int);
+//3. remove function declaration addPokemon(blahblahblah)
+//4. change displayMenu(Pokemon*,int) to
+  //void displayMenu(Pokemon*,int*,int)
+  //now takes in integer array to store indices of duplicated Pokemon
+  //according to Pokemon array
+//5. do the same for remove and show:
+  //void remove(Pokemon*,int*,int);
+  //void show(Pokemon*,int*,int);
+//6. change int find(Pokemon*,int) to:
+  //int find(Pokemon*,std::string,int,int);
+  //now takes in Pokemon name as string
+//7. add function declaration:
+  //std::string getPokemonName(Pokemon*,int);
+//8. add: getPokemonName.cpp file (included in this folder)
+//9. remove my addPokemon.cpp (don't remove the one you wrote)
+  //if you haven't already
+//10. in lab.cpp: replace displayMenu(pokePointer,maxPokemon) with
+  //the following 3 lines:
+    //int *repeats = new int[maxPokemon];
+      //stores indices of duplicate Pokemon
+    //displayMenu(pokePointer,repeats,maxPokemon);
+//11. in displayMenu.cpp:
+  //change std::string loop to char loop
+  //add this line under: std::cin >> choice;
+    //choice = toupper(choice);
+    //changes input to uppercase for input validation in while loop later
+//12. in displayMenu.cpp:
+  //replace internal while loop above
+  //switch cases with
+      /* while(choice!='R' && choice!='S' && choice!='L' && choice!='Q') {
+        //check whether or not user has entered R, S, L, or Q
+            std::cout<< "Please enter a valid input." << std::endl;
+            displayChoices(); //displays delete, show, and list choices
+            std::cin >> choice;
+            choice = toupper(choice);
+        }
+      */
+//13. in displayMenu.cpp:
+  //add another case to the switch:
+  // case 'Q' : return; //to quit menu
+//14. in displayMenu.cpp:
+  //after std::cout << "\n" add:
+  /*loop = toupper(loop);
+    while(loop!='N' && loop!='Y') {
+    //checks whether or not user enters N or Y
+        std::cout<< "Please enter a valid input." << std::endl;
+        std::cout << "Would you like to return to the menu? (Y/N): ";
+        std::cin >> loop;
+        loop = toupper(loop);
+        std::cout << std::endl;
+    */
+    }
+//15. in displayMenu.cpp:
+  //replace while(loop=="Y") with:
+    //while(loop=='N');
+//16. in displayChoices.cpp:
+  //replace entire thing with:
+/*
+  //displays a list of choices to modify Pokedex inventory
+    std::cout << "\t To (S)how a specified Pokemon, press \"S\"." << std::endl;
+    std::cout << "\t To (L)ist all the Pokemon in your inventory, press \"L\"." << std::endl;
+    std::cout << "\t To (R)emove a specified Pokemon, press \"R\"." << std::endl;
+    std::cout << "\t To (Q)uit the menu, press \"Q\".\n" << std::endl;
+*/
+//17. in displayMenu.cpp:
+  //replace function header with:
+  //void displayMenu(Pokemon *pokePointer, int *repeats, int maxPokemon)
+//18. replace remove.cpp with new remove.cpp (included in folder)
+//19. replace show.cpp with new show.cpp (included)
+//20. in find.cpp:
+  //replace function header with:
+    //int find(Pokemon *pokePointer, std::string name, int start, int maxPokemon)
+  //delete these lines:
+    //std::string name;
+    //std::cout << "What is the name of the Pokemon? ";
+    //std::cin >> name;
+  //replace do while loop with the following while loop:
+  /* while(start<numPokemon && start>=0) {
+        if(pokePointer[start].name==name) {
+            index = start;
+            return index;
+        } else {
+            start++;
+        }
+    }
+  */
+//21. in list.cpp: replace everything
+  //with the contents in the new list.cpp (included in folder)
+//22. in displayPokemon.cpp:
+  // add this comment to the beginning:
+  //     //displays all information elements of a single Pokemon
