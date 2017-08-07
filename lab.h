@@ -14,15 +14,24 @@ struct pokemon{
     std::string fileName;
     std::string gender;
     std::string type;
-    int attempts;
+    int catchProb;
+    int escapeProb;
 };
 
-enum pokemonList{bulbasaur, charmander, squirtle, exeggutor, pikachu, wailmer};
+enum pokemonList{bulbasaur, charmander, squirtle, ratatta, pikachu, wailmer};
 extern pokemonList p;
-const std::string pokemonFileName[]{"bulbasaur.png","charmander.png","squirtle.png", "alolanExeggutor.png", "pikachu.png", "wailmer.png"};
+const std::string pokemonFileName[]{"bulbasaur.png","charmander.png","squirtle.png", "ratatta.png", "pikachu.png", "wailmer.png"};
 const std::string pokemonType[]{"grass","fire","water","grass","electric","water"};
-const std::string pokemonName[]{"bulbasaur","charmander","squirtle", "exeggutor", "pikachu", "wailmer"};
-const int pokemonAttempts[]{3,3,3,5,3,3};
+const std::string pokemonName[]{"bulbasaur","charmander","squirtle", "ratatta", "pikachu", "wailmer"};
 pokemon pokemonGenerator();
+
 void drawCB(Fl_Cairo_Window*, cairo_t* cr);
-void generatorCB(Fl_Widget*);
+void generatorCB(void*b);
+void b1CB(Fl_Widget*b,void*);
+int pokemonCaught();
+void drawGenerator(cairo_t* cr);
+void throwCB(void*b);
+void b2CB(Fl_Widget*b,void*);
+extern int catchProb; //created since can't pass in more parameters to CB functions
+extern int escapeProb;
+void drawBall(cairo_t* cr);

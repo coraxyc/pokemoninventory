@@ -5,13 +5,17 @@
 #include "lab.h"
 
 int main(){
+    srand(time(0)); //resetting the random 
     //creating cairo stuff
     Fl_Cairo_Window cw(Width, Height);
-    cw.color(FL_WHITE);
     cw.set_draw_cb(drawCB);
-    Fl_Button pokegenB(Width*.10, Height*.30, Width*.31, Height * .1, "Pokemon finding");
-    pokegenB.callback(generatorCB); //callback function
-    srand(time(0)); //resetting the random 
+    cw.color(FL_LIGHT3);
+    cw.label("Pokemon!");
+    Fl_Button pokegenB(Width*.2, Height*.5, Width*.31, Height * .1, "Pokemon finding");
+    pokegenB.callback(b1CB); //callback function
+    Fl_Button pokecatchB(Width*.2, Height *.6, Width*.1,Height*.1, "Catch");
+    pokecatchB.callback(b2CB);
     cw.show();
     Fl::run();
+    
 }
