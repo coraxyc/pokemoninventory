@@ -5,7 +5,9 @@
 #include <ctime>
 #include <Fl/Fl_Cairo_Window.H>
 #include <Fl/Fl_Button.H>
-
+#include <FL/Fl_Multiline_Output.H>
+#include <FL/Fl_Text_Display.H>
+#include <FL/Fl.H>
 const int Width = 500;
 const int Height = 500;
 
@@ -32,6 +34,13 @@ int pokemonCaught();
 void drawGenerator(cairo_t* cr);
 void throwCB(void*b);
 void b2CB(Fl_Widget*b,void*);
+Fl_Button* displayCatchCB(Fl_Button* bp);
+void drawBall(cairo_t* cr);
 extern int catchProb; //created since can't pass in more parameters to CB functions
 extern int escapeProb;
-void drawBall(cairo_t* cr);
+extern int caught;
+void printOutput(std::string a);
+//extern Fl_Multiline_Output *console;
+extern Fl_Button pokecatchB;
+extern Fl_Text_Buffer *buff;
+extern Fl_Text_Display *disp;

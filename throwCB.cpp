@@ -11,17 +11,19 @@ void throwCB(void*b) {
     if(caught == 0) {
 	caught = pokemonCaught(); 
 	if(caught == 1) {
-	    bp->hide();
+	    pokecatchB.hide();
 	    std::cout << "Caught it!" << std::endl;
 	} else if (caught == 2) {
-	    bp->hide();
+	    pokecatchB.hide();
 	    std::cout << "Ran away, sorry!" << std::endl;
 	}
     }
-    
-    
 }
-
+/*Fl_Button displayCatchCB(Fl_Button* bp) {
+    std::cout << caught << std::endl;
+    return bp;
+}
+*/
 void b2CB(Fl_Widget*b,void*){
     Fl::add_timeout(0.01,throwCB,b);
 }
