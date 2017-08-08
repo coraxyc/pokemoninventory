@@ -38,9 +38,14 @@ Fl_Button* displayCatchCB(Fl_Button* bp);
 void drawBall(cairo_t* cr);
 extern int catchProb; //created since can't pass in more parameters to CB functions
 extern int escapeProb;
-extern int caught;
 void printOutput(std::string a);
+void drawTrainer(cairo_t* cr);
 //extern Fl_Multiline_Output *console;
 extern Fl_Button pokecatchB;
 extern Fl_Text_Buffer *buff;
 extern Fl_Text_Display *disp;
+extern int caught;
+extern int catchPressed; // 0 = not pressed 1 = pressed
+extern bool animationEnd;
+void drawRanAway(cairo_t* cr);
+void drawCaptureSuccess(cairo_t* cr);

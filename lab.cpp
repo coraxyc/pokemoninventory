@@ -1,7 +1,9 @@
 /* source code */
 //to run use 
 //g++ --std=c++11 -I ~/fltk-1.3.3 *.cpp -o pokemon `fltk-config --cxxflags --ldflags --use-cairo`
-
+//done to my knowledge, on calculus cramming vacay now 
+//cairo graphics? yes sign me uppp 11/10
+//to-do find your cloud pic and poof pic and replace  
 #include "lab.h"
 Fl_Text_Buffer *buff = new Fl_Text_Buffer();
 Fl_Text_Display *disp = new Fl_Text_Display(Width*.2,Height*.7,Width *.6,Height*.2);
